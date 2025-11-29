@@ -1,0 +1,178 @@
+% !TeX spellcheck = en_GB
+% !TeX program = pdflatex
+%
+% LuxSleek-CV 1.1 LaTeX template
+% Author: Andreï V. Kostyrka, University of Luxembourg
+
+\documentclass[11pt, a4paper]{article} 
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[british]{babel}  
+\usepackage[left = 0mm, right = 0mm, top = 0mm, bottom = 0mm]{geometry}
+\usepackage[stretch = 25, shrink = 25, tracking=true, letterspace=30]{microtype}  
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{marvosym}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fontawesome5}
+
+% === Ajouts pour l'alignement des icônes ===
+\usepackage{array}                 % colonnes m{..}
+\usepackage[export]{adjustbox}     % valign=c pour \includegraphics
+
+\usepackage{enumitem}
+\setlist{parsep = 0pt, topsep = 0pt, partopsep = 1pt, itemsep = 1pt, leftmargin = 6mm}
+
+\usepackage{FiraSans}
+\renewcommand{\familydefault}{\sfdefault}
+
+\definecolor{cvblue}{HTML}{F7E7CE}
+
+%%%%%%% USER COMMAND DEFINITIONS %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\dates}[1]{\hfill\mbox{\textbf{#1}}}
+\newcommand{\is}{\par\vskip.5ex plus .4ex}
+\newcommand{\smaller}[1]{{\small$\diamond$\ #1}}
+\newcommand{\headleft}[1]{\vspace*{3ex}\textsc{\textbf{#1}}\par%
+    \vspace*{-1.5ex}\hrulefill\par\vspace*{0.7ex}}
+\newcommand{\headright}[1]{\vspace*{2.5ex}\textsc{\Large\color{cvblue}#1}\par%
+     \vspace*{-2ex}{\color{cvblue}\hrulefill}\par}
+% Helpers d'alignement icônes
+\newcommand{\icon}[1]{\raisebox{-0.12\height}{#1}}               % pour FontAwesome
+\newcommand{\imgicon}[1]{\includegraphics[height=1.05em,valign=c]{#1}} % si tu veux des PNG/SVG
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PREAMBULE
+\usepackage{xcolor}
+\definecolor{cvdark}{HTML}{F7E7CE} % ou \definecolor{cvdark}{gray}{0.15}
+\setlength{\fboxsep}{12pt} % "padding" interne
+
+% Macro de section "barre"
+\newcommand{\cvsection}[1]{%
+  \vspace{0.8em}%
+  \noindent
+  \colorbox{cvdark}{%
+    \parbox{\dimexpr\linewidth-2\fboxsep\relax}{%
+      \vspace*{6pt}\textcolor{black}{\bfseries\large #1}\vspace*{6pt}%
+    }%
+  }%
+  \par\vspace{0.6em}%
+}
+
+
+\begin{document}
+
+% Style definitions
+\setlength{\topskip}{0pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\fboxsep}{0pt}
+\pagestyle{empty}
+\raggedbottom
+
+\begin{minipage}[t]{0.33\textwidth} %% Left column -- outer definition
+\colorbox{cvblue}{\begin{minipage}[t][5mm][t]{\textwidth}\null\hfill\null\end{minipage}}
+
+\vspace{-.1ex}
+\colorbox{cvblue!90}{\color{black}
+\kern0.09\textwidth\relax
+\begin{minipage}[t][293mm][t]{0.82\textwidth}
+\raggedright
+\vspace*{1.5ex}
+
+\Large Vincent \textbf{\textsc{Bertrand}} \normalsize 
+
+\null\hfill\includegraphics[width=0.85\textwidth]{photo_VB.jpg}\hfill\null
+
+\vspace*{0.5ex}
+
+\headleft{Résumé}
+À la recherche d’un stage dans les domaines de l’IT, je souhaite intégrer une entreprise pour un \textbf{stage de 16 semaines} à partir du 02 mars 2026. Je voudrais mettre à profit mes \textbf{compétences} dans le domaine des \textbf{réseaux et de l'IT} en général.
+
+\headleft{Contact (liens cliquables)}
+\small
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{@{}>{\centering\arraybackslash}m{1.6em} l@{}}
+\icon{\faIcon{map-marked-alt}} &
+Nancy (54), Bar-Sur-Aube (10) \\
+\icon{\faEnvelope} & \href{mailto:XXXXXXX@gmail.com}{vincent.bertrand10p@gmail.com} \\
+\icon{\faPhone}    & \href{tel:+910000000000}{06\,52\,23\,54\,27} \\
+\icon{\faLinkedin} & \href{https://www.linkedin.com/in/vincent-bertrand-5aa762177}{Mon profil LinkedIn} \\
+\href{https://www.linkedin.com/in/vincent-bertrand-5aa762177}{%
+  \shortstack[l]{\nolinkurl{linkedin.com/in/}\\\nolinkurl{vincent-bertrand-5aa762177}}%
+} \\
+\icon{\faGithub}   & \href{https://github.com/vincent-bertrand}{github.com/vincent-bertrand} \\
+\end{tabular}
+\normalsize
+
+% --- Si tu préfères tes images LinkedIn/GitHub, remplace la ligne correspondante par :
+% \imgicon{icons8-linkedin-48.png} & \href{https://www.linkedin.com/in/vincent-bertrand-5aa762177}{Mon profil LinkedIn} \\
+% \imgicon{icons8-github-30.png}   & \href{https://github.com/vincent-bertrand}{github.com/vincent-bertrand} \\
+
+\headleft{Langues}
+Français: \textbf{Maternelle} \\[0.5ex]
+Anglais: \textbf{B2 (TOEIC : 645/990)} \\[0.5ex]
+Espagnol: \textbf{A1 (débutant)}
+
+\headleft{Compétences}
+\begin{itemize}
+    \item \textbf{Réseaux} (Déploiement et sécurisation d’un SI).
+    \item \textbf{Langages :}
+    \begin{itemize}
+        \item Présentation : LaTex, HTML, CSS.
+        \item Programmation : C, Python, Java, SQL, JS, VBA (Excel).
+    \end{itemize}
+    \item \textbf{IoT} : ESP32, MQTT, NodeRed, RESTful API.
+    \item \textbf{Méthodes numériques} et \textbf{traitement du signal} (Matlab, FFT).
+    \item \textbf{Veille technologique}.
+    \item \textbf{Gestion de projet et travail collaboratif} : GitHub (versionnage), Gantt.
+\end{itemize}
+
+\end{minipage}%
+\kern0.09\textwidth\relax
+}
+\end{minipage}%
+\hskip2.5em
+\begin{minipage}[t]{0.56\textwidth}
+\setlength{\parskip}{0.8ex}
+
+\vspace{2ex}
+
+\cvsection{Experience}
+
+\textsc{ASSOCIÉ GÉRANT} à \textit{EARL Champagne Hervé BERTRAND, Voigny.}  \dates{Juin 2020-ACTUEL} \\
+\is
+\textbf{Compétences : anticipation, gestion des incidents, autonomie}. \\
+\smaller{Travaux de la vigne, palissage, vendanges.
+Travaux en cave, approvisionnement, logistique, dégorgement, embouteillage, préparation d’expéditions et accueil de clients.} \\
+\textbf{Gestion d’entreprise}. 
+\vspace{1cm} \\
+\textsc{Conducteur de travaux} à \textit{Axians (Santerne Est Telecoms SAS), Ay-sur-Moselle, Grand Est, France},  \dates{Avril 2025 - Juin 2025} \\
+\is
+\textbf{Compétences : Préparation de devis, études techniques, visites sur site, réaménagement, respect des délais, gestion de projets, veille technologique}. \\
+\smaller{Pendant ce stage, j’ai contribué à la gestion et à l’optimisation d’infrastructures TowerCo (pylônes télécoms et équipements radio). Réalisé au sein d'Axians, société spécialisée dans l'ICT (Information \& Communication Technologie) filière de Vinci Energies, elle-même au sein du groupe Vinci.} \\
+\href{https://github.com/vincent-bertrand/portfolio/blob/8eba2640d10e6c2511ef1cbfb93acad47c537a24/2A_BERTRAND_Axians.pdf}{\textbf{Compte rendu du stage 2ème année BUT R\&T (lien vers GitHub)}}
+\is
+
+\cvsection{FORMATION}
+
+\textsc{BUT R\&T PARCOURS ROM}, \textit{IUT Nancy-Brabois, Villiers-lès-Nancy}. \dates{2024 - 2026} \\
+
+\is
+\textsc{LICENCE SCIENCES POUR L’INGÉNIEUR (parcours Systèmes Numériques, Productique et Réseaux}, \textit{FST Nancy, Université de Lorraine}.\dates{2019 - 2024} \\
+
+\is
+\textsc{BACCALAURÉAT STI2D OPTION (EE).} \textit{Lycée Henri Loritz, Nancy},\dates{2017 - 2019} \\
+
+\cvsection{RÉALISATION ET CONCOURS}
+\smaller{\textsc{\textbf{CONCOURS : “MON PROJET EN 5 MINUTES”}} \textit{club eea 9ème édition, émerainville}} \dates{JUIN 2024} \\
+\textit{Lors du concours \textbf{“Mon Projet en 5 Minutes”}, avec mon équipe Nous sommes allés jusqu'à la \textbf{3e place} en finale (le 11 juin 2024 lors de la 9 ème édition) avec \textbf{Poub’Ul}, un \textbf{projet IoT} visant à optimiser la collecte des déchets à l’Université de Lorraine. J’ai assuré la gestion de la partie réseau et de la transmission des données vers le serveur, alliant \textbf{rigueur} et \textbf{esprit d’analyse} pour une solution efficace et connectée.}
+
+\cvsection{CENTRES D’INTÉRÊT}
+
+\textit{Sciences (sciences de l’information; viticulture, œnologie) - Sport (trail) -
+Automobile -
+Aéronautique}
+\end{minipage}
+
+\end{document}
